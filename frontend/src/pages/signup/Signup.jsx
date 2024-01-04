@@ -15,7 +15,7 @@ const handleSignup =async(e)=>{
   e.preventDefault()
  
 try {
-  let response = await fetch('http://localhost:3001/api/users/create',{
+  let response = await fetch('http://friends-book-social-media.vercel.app/api/users/create',{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -40,7 +40,7 @@ const Home = () => {
   const handlePost =async()=>{
     let input = inputRef.current.value
     console.log("inputValue",inputValue)
-    let response = await fetch('http://localhost:3001/api/posts/create',{
+    let response = await fetch('http://friends-book-social-media.vercel.app/api/posts/create',{
       method:"POST",
       headers:{
           'content-type':'application/json'
@@ -60,7 +60,7 @@ const Home = () => {
 
   useEffect(()=>{
     const fetchTimeLinePost = async()=>{
-      let res = await fetch('http://localhost:3001/api/users/timeLinePosts',{
+      let res = await fetch('http://friends-book-social-media.vercel.app/api/users/timeLinePosts',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({"_id":getUser.user._id})

@@ -30,7 +30,7 @@ const Navbar = () => {
     e.preventDefault();
     setclicked(true)
     // console.log(inputRef.current.value)
-    let response = await fetch('http://localhost:3001/api/users/searchUsers', {
+    let response = await fetch('http://friends-book-social-media.vercel.app/api/users/searchUsers', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
