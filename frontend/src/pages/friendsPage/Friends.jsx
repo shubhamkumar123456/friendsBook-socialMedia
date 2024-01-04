@@ -15,7 +15,7 @@ const Friends = () => {
   const [posts, setposts] = useState([]);
   useEffect(()=>{
     const fetchUserAllPost = async()=>{
-      let res = await fetch(`http://friends-book-social-media.vercel.app/api/posts/getsinglePost/${location.state._id}`);
+      let res = await fetch(`https://friends-book-social-media.vercel.app/api/posts/getsinglePost/${location.state._id}`);
       let data = await res.json();
       setposts(data)
       console.log(data);
@@ -25,7 +25,7 @@ const Friends = () => {
   const [show, setShow] = useState(false);
 
   const handleFollowClick =async()=>{
-    let res  = await fetch(`http://friends-book-social-media.vercel.app/api/users/follow/${user._id}`,{
+    let res  = await fetch(`https://friends-book-social-media.vercel.app/api/users/follow/${user._id}`,{
       method:'POST',
       headers:{
         'content-type': 'application/json'
@@ -39,7 +39,7 @@ const Friends = () => {
   }
 
   const handleUnFollowClick =async()=>{
-    let res  = await fetch(`http://friends-book-social-media.vercel.app/api/users/unfollow/${user._id}`,{
+    let res  = await fetch(`https://friends-book-social-media.vercel.app/api/users/unfollow/${user._id}`,{
       method:'POST',
       headers:{
         'content-type': 'application/json'

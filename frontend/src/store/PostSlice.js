@@ -6,7 +6,7 @@ const initialState = {
 
 export const fetchPost = createAsyncThunk('fetchpost',async()=>{
     let userId = JSON.parse(localStorage.getItem('login'))._id;
-    let response = await fetch(`http://friends-book-social-media.vercel.app/api/posts/getsinglePost/${userId}`)
+    let response = await fetch(`https://friends-book-social-media.vercel.app/api/posts/getsinglePost/${userId}`)
       let userPost = response.json();
     //   console.log(userDetails)
       return userPost

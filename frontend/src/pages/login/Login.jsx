@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      let response = await fetch('http://friends-book-social-media.vercel.app/api/users/login', {
+      let response = await fetch('https://friends-book-social-media.vercel.app/api/users/login', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
