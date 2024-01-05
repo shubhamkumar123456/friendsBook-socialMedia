@@ -49,7 +49,7 @@ const Login = () => {
     <div className={Css.login}>
       <p className={Css.error} style={{textAlign:"center"}}>{errMsg}</p>
       <form action="" className={Css.form}>
-        <h1 className={Css.heading}>Lgin Page</h1>
+        <h1 className={Css.heading}>Login Page</h1>
         <label className={Css.label} htmlFor="">Email</label>
         <input className={Css.input} type="email" ref={emailRef} />
         <label className={Css.label} htmlFor="">Password</label>
