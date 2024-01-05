@@ -177,3 +177,16 @@ position: relative;
    
     cursor: pointer;
 }
+
+@media only screen and (max-width: 520px){
+    .userPicBox{
+        width: 150px;
+        height: 150px;
+        left: 10px;
+    }
+    .followersBox{
+        width: 100px;
+        margin-right: 0px;
+        margin-left:20px;
+    }
+}

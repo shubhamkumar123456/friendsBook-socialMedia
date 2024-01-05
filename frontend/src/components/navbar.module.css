@@ -87,6 +87,8 @@
     gap: 40px;
     font-size: 25px;
     align-items: center;
+    /* background-color: yellow; */
+    /* margin-left: 350px; */
 }
 .navListLink{
     text-decoration: none;
@@ -115,5 +117,53 @@
 .accountProfile{
     display: none;
 }
+.menuBar{
+    display: none;
+}
+.show{
+    display: block
+}
+.hide{
+    display: none;
+}
 
+
+@media only screen and (max-width: 1110px) {
+   .searchForm{
+    margin: 0;
+    padding: 0;
+   }
+  }
+
+  @media only screen and (max-width: 1000px){
+    .navbar{
+        position: relative;
+        min-width: 300px;
+        margin: 0;
+        
+    }
+    .menuBar{
+        display: block;
+    }
+    .navList{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: #f60;
+
+        height: 350px;
+        left: 0;
+    }
+    .navListLi{
+     margin: auto;
+  
+    }
+    .datalist{
+        z-index: 9999;
+    }
+
+ 
+  }
 

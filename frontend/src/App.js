@@ -31,7 +31,7 @@ function App() {
     <div className="App">
   
      <BrowserRouter>
-       <div style={{marginBottom:"4rem"}}> <Navbar /></div>
+       <div style={{height:"4rem"}}> <Navbar /></div>
         <Routes>
         { selector.login && <Route path="/" element={<Home />} />}
           {!selector.login &&  <Route path="/" element={ <Navigate to="/login" /> } />}

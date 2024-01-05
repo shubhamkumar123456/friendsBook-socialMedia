@@ -43,3 +43,10 @@
     text-decoration: none;
     border-bottom: 1px solid green;
 }
+@media only screen and (max-width: 1000px){
+    .threeDots{
+        position: absolute;
+        right: 30px;
+        top: 15px;
+    }
+}

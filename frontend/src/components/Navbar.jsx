@@ -7,6 +7,7 @@ import { logoutUser, searchFriend } from '../store/AuthSlice'
 
 
 const Navbar = () => {
+  const [showResponsive, setshowResponsive] = useState(true);
   const [toggler, settoggler] = useState(false);
   const [clicked, setclicked] = useState(false);
   const firends = useSelector((state) => state.auth.searchFriend)
@@ -46,6 +47,15 @@ const Navbar = () => {
     setclicked(false);
     dispatch(searchFriend([]))
   }
+  const handleToggleShow =()=>{
+    setshowResponsive(!showResponsive)
+  }
+  useEffect(()=>{
+    if(window.innerWidth<1000){
+      console.log("toggler")
+      settoggler(false)
+    }
+  },[window.innerWidth])
 
   return (
     <div className={Css.navbar}>
@@ -53,8 +63,9 @@ const Navbar = () => {
       {/* {<button onClick={handleClick}>click</button> } */}
 
       <Link style={{ textDecoration: "none", color: "black" }} to='/'><h1>FriendsBook</h1></Link>
-      <ul className={!auth.login?Css.accountProfile:Css.navList}>
-        <li>
+      {<div className={showResponsive? Css.show:Css.hide}>
+      <ul className={!auth.login?Css.accountProfile :Css.navList }>
+        <li className={Css.navListLi}>
           <div action="" className={Css.searchForm}>
             <input className={Css.searchInput} type="text" ref={inputRef} placeholder='search friends' />
             <div className={Css.datalist}>
@@ -76,9 +87,16 @@ const Navbar = () => {
         <li className={Css.navListLi}><Link to={'/followers'} className={Css.navListLink}>Followers</Link></li>
         <li className={Css.navListLi}><Link to={'/following'} className={Css.navListLink}>Followings</Link></li>
         {/* <li className={Css.navListLi}><Link to={'/friends'} className={Css.navListLink}>Friends</Link></li> */}
-        <li >
+        <li className={Css.navListLi}>
           <Link style={{display:"flex",alignItems:"center", height:"100%"}}><img className='accountImg' src={user.profilePicture} alt="" />
-            <i onClick={()=>{settoggler(!toggler)}} className="bi bi-three-dots-vertical threeDots">
+           
+
+          </Link>
+        </li>
+       
+      </ul>
+      </div>}
+      <i onClick={()=>{settoggler(!toggler)}} className="bi bi-three-dots-vertical threeDots">
               {toggler && <ul className='threeDotsInside'>
                
                <li><Link to={'/profile'} >Profile</Link></li>
@@ -89,10 +107,7 @@ const Navbar = () => {
 
              </ul>}
             </i>
-
-          </Link>
-        </li>
-      </ul>
+      <i  onClick={handleToggleShow} style={{marginRight:"30px"}} class={`bi bi-list ${Css.menuBar}`}></i>
     </div>
 
   )
