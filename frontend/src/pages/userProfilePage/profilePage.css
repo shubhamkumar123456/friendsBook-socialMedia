@@ -189,4 +189,10 @@ position: relative;
         margin-right: 0px;
         margin-left:20px;
     }
+    .profilepagePostBox{
+        width: 280px;
+    }
+    .profilePageBoxBottom{
+        width: 250px;
+    }
 }

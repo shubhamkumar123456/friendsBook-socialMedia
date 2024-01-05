@@ -142,5 +142,13 @@ min-height: 91vh;
     .timelinePostBox{
         width: 300px;
     }
+    .previewPost{
+        width: 300px;
+        height:200px;
+        background-color: whitesmoke;
+        position: absolute;
+        top: 10%;
+        left: 10px;
+    }
     
 }
