@@ -96,7 +96,7 @@ const Navbar = () => {
        
       </ul>
       </div>}
-      <i onClick={()=>{settoggler(!toggler)}} className="bi bi-three-dots-vertical threeDots">
+      <i onClick={()=>{settoggler(!toggler)}} className={`${auth.login && "bi bi-three-dots-vertical threeDots"}`}>
               {toggler && <ul className='threeDotsInside'>
                
                <li><Link to={'/profile'} >Profile</Link></li>
