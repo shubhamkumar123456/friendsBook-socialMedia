@@ -3,12 +3,12 @@ const port = process.env.PORT || 2000
 const app = express();
 const connectToDb = require('./db')
 connectToDb();
-var cors = require('cors')
 const socketIO = require("socket.io");
 const http=require("http");
 const server=http.createServer(app);
 const io=socketIO(server);
 const fileUpload = require("express-fileupload");
+var cors = require('cors')
 const UserRoutes = require('./routes/user')
 const postRoutes = require('./routes/post')
 const conversationRoutes = require('./routes/conversation')
