@@ -96,7 +96,7 @@ const Home = () => {
           </div>
 
           <div className='timeLinePostsContainer'>
-           {timlinePost.map((post)=>{
+           {timlinePost?.map((post)=>{
             return <div key={post._id} className='timelinePostBox'>
                   <p className='timelinePostBoxP'>{post.desc}</p>
                   <img src={post.img} alt="" />
