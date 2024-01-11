@@ -109,7 +109,7 @@ useEffect(()=>{
 
   return (
     <div className='profilePage'>
-        <div><FriendList/></div>
+        {/* <div><FriendList/></div> */}
         <div className='followersBox'>
             <Link to={'/followers'}><button className='btnFollower'>{userDetail.followers?userDetail.followers.length:0}{' '}Followers</button></Link>
             <Link to={'/following'}><button className='btnFollowing'>{userDetail.followings?userDetail.followings.length:0}{' '}Followings</button></Link>

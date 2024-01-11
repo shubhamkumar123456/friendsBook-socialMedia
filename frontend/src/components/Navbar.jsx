@@ -13,7 +13,7 @@ const Navbar = () => {
   const firends = useSelector((state) => state.auth.searchFriend)
   const user = useSelector((state) => state.auth.user)
   const auth = useSelector((state) => state.auth);
-  console.log(user)
+  // console.log(user)
   let inputRef = useRef()
   let location = useLocation();
   // console.log()
@@ -88,6 +88,12 @@ const Navbar = () => {
         <li className={Css.navListLi}><Link to={'/following'} className={Css.navListLink}>Followings</Link></li>
         {/* <li className={Css.navListLi}><Link to={'/friends'} className={Css.navListLink}>Friends</Link></li> */}
         <li className={Css.navListLi}>
+          <Link to={'/messages'} style={{display:"flex",textDecoration:"none",alignItems:"center", height:"100%",color:"black"}}>
+           Messages
+
+          </Link>
+        </li>
+        <li className={Css.navListLi}>
           <Link style={{display:"flex",alignItems:"center", height:"100%"}}><img className='accountImg' src={user.profilePicture} alt="" />
            
 
@@ -107,7 +113,7 @@ const Navbar = () => {
 
              </ul>}
             </i>
-      <i  onClick={handleToggleShow} style={{marginRight:"30px"}} class={`bi bi-list ${Css.menuBar}`}></i>
+      <i  onClick={handleToggleShow} style={{marginRight:"30px"}} className={`bi bi-list ${Css.menuBar}`}></i>
     </div>
 
   )

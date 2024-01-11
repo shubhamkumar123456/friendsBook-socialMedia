@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import CSS from './friends.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUser } from '../../store/AuthSlice';
@@ -13,6 +13,8 @@ const Friends = () => {
   let user = location.state
   // console.log(user)
   const [posts, setposts] = useState([]);
+
+
   useEffect(()=>{
     const fetchUserAllPost = async()=>{
       let res = await fetch(`https://friends-book-social-media.vercel.app/api/posts/getsinglePost/${location.state._id}`);
@@ -79,6 +81,7 @@ const Friends = () => {
           
                {show ?<button onClick={handleUnFollowClick} className={CSS.btnUnFollow}>Unfollow</button>:<button onClick={handleFollowClick} className={CSS.btnFollow}>Follow</button>}
           </div>
+          <Link to={'/chat'} state={{user,userDetail}} className={CSS.sendMsgBtn}>Chat</Link>
       </div>
 
       <div className={CSS.friendsPagePosts}>
@@ -87,7 +90,7 @@ const Friends = () => {
             return <div key={post._id} className={CSS.postBox}>
                   <p className={CSS.postTitle}>{post.desc}</p>
                   <img className={CSS.postImg} src={post.img} alt="" />
-                  <p className={CSS.iconBox}><i style={{color:"red"}} class="bi bi-heart-fill"></i>{post.likes.length}</p>
+                  <p className={CSS.iconBox}><i style={{color:"red"}} className="bi bi-heart-fill"></i>{post.likes.length}</p>
             </div>
         })}
       </div>

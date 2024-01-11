@@ -4,8 +4,8 @@
 }
 .homePageLeft{
     width: 300px;
-    height: 100vh;
-    background-color: grey;
+    min-height: 100vh;
+    background-color: rgba(187, 170, 15, 0.749);
 }
 .homePageRight{
     width: 100%;

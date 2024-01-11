@@ -73,9 +73,9 @@ const Home = () => {
   },[])
   return (
     <div className='homepgae'>
-      {/* <div className='homePageLeft'>
+      <div className='homePageLeft'>
       <FriendList/>
-      </div> */}
+      </div>
       <div className='homePageRight'>
           <div className='hpRightContainer'>
             <div className='hpRightContainerTop'>
@@ -100,7 +100,7 @@ const Home = () => {
             return <div key={post._id} className='timelinePostBox'>
                   <p className='timelinePostBoxP'>{post.desc}</p>
                   <img src={post.img} alt="" />
-                  <p style={{textAlign:"center"}} className='timelinePostBoxP'><i class="bi bi-heart-fill"></i>{post.likes.length}</p>
+                  <p style={{textAlign:"center"}} className='timelinePostBoxP'><i className="bi bi-heart-fill"></i>{post.likes.length}</p>
             </div>
            })}
            {timlinePost.length<=0 && <p>No Post to show yet or follow users to show posts</p>}
