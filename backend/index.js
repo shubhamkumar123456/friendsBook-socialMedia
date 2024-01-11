@@ -12,7 +12,7 @@ const fileUpload = require("express-fileupload");
 const UserRoutes = require('./routes/user')
 const postRoutes = require('./routes/post')
 const conversationRoutes = require('./routes/conversation')
-const messagesRoutes = require('./routes/message')
+const messagesRoutes = require('./routes/messages')
 // const {addUser ,removeUser , getUser} = require('./users')
 
 
